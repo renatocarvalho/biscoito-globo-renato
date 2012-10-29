@@ -1,6 +1,9 @@
 BiscoitoGlobo::Application.routes.draw do
-  resources :news
 
+  namespace :admin do
+    resources :news
+  end
+  
   root to: 'home#index'
 
   get "home/index"

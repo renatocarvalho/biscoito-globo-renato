@@ -1,0 +1,42 @@
+<h1>Notícias</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Subtítulo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @news.each do |news| %>
+    <tr>
+      <td><%= news.title %></td>
+      <td><%= news.subtitle %></td>
+      <td>
+        <div class="btn-group">
+          <!-- <%= link_to 'Detalhes', admin_news_path(news), class: 'btn btn-small' %> -->
+          <%= link_to admin_news_path(news), class: 'btn btn-small' do %>
+            <i class="icon-eye-open"></i> Detalhes
+          <% end %>
+          
+          <%= link_to edit_admin_news_path(news), class: 'btn btn-small' do %>
+            <i class="icon-pencil"></i> Editar
+          <% end %>
+          
+          <%= link_to admin_news_path(news), method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-small btn-danger' do %>
+            <i class="icon-trash icon-white"></i> Excluir
+          <% end %>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<!-- <%= link_to 'Cadastrar', new_admin_news_path, class: 'btn btn-primary btn-large' %> -->
+<%= link_to new_admin_news_path, class: 'btn btn-primary btn-large' do %>
+  <i class="icon-plus-sign icon-white"></i> Cadastrar
+<% end %>

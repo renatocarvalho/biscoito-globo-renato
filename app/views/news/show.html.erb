@@ -1,9 +1,0 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @news.title %></h1>
-<h2><%= @news.subtitle %></h2>
-
-<%= simple_format(@news.content) %>
-
-<%= link_to 'Editar', edit_news_path(@news), class: 'btn' %>
-<%= link_to 'Todas as notícias', news_index_path, class: 'btn' %>

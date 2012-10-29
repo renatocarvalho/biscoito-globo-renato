@@ -1,0 +1,15 @@
+<% if notice %>
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <h4>Notícia salva com sucesso!</h4>
+    <%= notice %>
+  </div>
+<% end %>
+
+<h1><%= @news.title %></h1>
+<h2><%= @news.subtitle %></h2>
+
+<%= simple_format(@news.content) %>
+
+<%= link_to 'Editar', edit_admin_news_path(@news), class: 'btn' %>
+<%= link_to 'Todas as notícias', admin_news_index_path, class: 'btn' %>
