@@ -12,18 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label 'Título' %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :subtitle %><br />
+    <%= f.label 'Subtítulo' %>
     <%= f.text_field :subtitle %>
   </div>
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label 'Conteúdo' %>
     <%= f.text_area :content %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions form-actions">
+    <%= f.submit 'Salvar', class: 'btn btn-primary' %>
+    <%= link_to 'Cancelar', news_index_path, class: 'btn' %>
   </div>
 <% end %>
